@@ -1,5 +1,4 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -18,17 +17,21 @@ return require('packer').startup(function(use)
 
     use('Mofiqul/dracula.nvim')
     use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+    use {
         'lewis6991/gitsigns.nvim',
         config = function()
             require('gitsigns').setup()
         end
     }
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-    use('nvim-treesitter/playground')
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
-
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -52,7 +55,6 @@ return require('packer').startup(function(use)
     }
 
     use("folke/zen-mode.nvim")
-    use("github/copilot.vim")
 
 end)
 
