@@ -1,6 +1,5 @@
 require("joshgermon.set")
 require("joshgermon.remap")
-
 local augroup = vim.api.nvim_create_augroup
 local ThePrimeagenGroup = augroup('ThePrimeagen', {})
 
