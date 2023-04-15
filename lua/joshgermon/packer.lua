@@ -53,7 +53,6 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'},
         }
     }
-
     use("folke/zen-mode.nvim")
     use('simrat39/rust-tools.nvim')
     use {
