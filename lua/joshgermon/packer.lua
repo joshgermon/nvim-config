@@ -11,10 +11,8 @@ return require('packer').startup(function(use)
     }
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-
     use('Mofiqul/dracula.nvim')
     use {
         'numToStr/Comment.nvim',
@@ -32,6 +30,7 @@ return require('packer').startup(function(use)
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
+    use('folke/trouble.nvim')
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -53,7 +52,6 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'},
         }
     }
-    use("folke/zen-mode.nvim")
     use('simrat39/rust-tools.nvim')
     use {
       "folke/which-key.nvim",
