@@ -55,6 +55,7 @@ return require('packer').startup(function(use)
     }
 
     use("folke/zen-mode.nvim")
+    use('simrat39/rust-tools.nvim')
     use {
       "folke/which-key.nvim",
       config = function()
