@@ -4,6 +4,7 @@ return {
     version = false,
     lazy = false,
     priority = 100,
+    dependencies = { "echasnovski/mini.extra" },
     config = function()
       -- Icons
       require("mini.icons").setup()
@@ -59,6 +60,9 @@ return {
           cwd = nil,
         },
       })
+
+      -- Extra (LSP pickers)
+      require("mini.extra").setup()
     end,
     keys = {
       {

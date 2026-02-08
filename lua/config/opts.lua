@@ -26,9 +26,10 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
--- Enable diagnostic virtual text (single line, no truncation)
+-- Enable diagnostic virtual text (single line, no truncation, current line only)
 vim.diagnostic.config({
   virtual_text = {
+    current_line = true,
     prefix = "●",
     spacing = 4,
     source = "if_many",
@@ -45,20 +46,7 @@ vim.diagnostic.config({
   },
 })
 
--- Show full diagnostic on cursor hold (hover)
-vim.api.nvim_create_autocmd("CursorHold", {
-  callback = function()
-    vim.diagnostic.open_float(nil, {
-      focusable = false,
-      close_events = { "CursorMoved", "InsertEnter" },
-    })
-  end,
-})
-
--- Keymap to manually open diagnostic float
-vim.keymap.set("n", "<leader>d", function()
-  vim.diagnostic.open_float(nil, { focusable = true })
-end, { desc = "Show diagnostic" })
+-- Diagnostic float shows on keybind only (<leader>d in keymaps.lua)
 
 vim.opt.scrolloff = 8
 vim.opt.updatetime = 50
